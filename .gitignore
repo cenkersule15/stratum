@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.venv/
+var/
+**/node_modules/
+**/dist/
+**/__pycache__/
+*.tsbuildinfo
+dbt/target/
+dbt/logs/

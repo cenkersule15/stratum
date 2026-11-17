@@ -1,0 +1,14 @@
+{
+  "publisher": "NYC Taxi & Limousine Commission",
+  "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-01.parquet",
+  "page": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+  "downloaded_at": "2026-11-16",
+  "source_sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a",
+  "source_rows": 3475226,
+  "sample_rows": 50000,
+  "sample_sha256": "7983de455d4c96fbaeec77c7726c1594fb584a837e6feabfbd5284a1ae2f9a8c",
+  "selection": "Every 69th source row, first 50000 matches. Convenience sample, not representative. Original columns preserved.",
+  "zone_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+  "source_bytes": 59158238,
+  "sample_bytes": 895659
+}

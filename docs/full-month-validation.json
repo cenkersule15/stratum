@@ -1,0 +1,259 @@
+{
+  "id": "cf5ea2968d51",
+  "month": "2025-01",
+  "mode": "full",
+  "scenario": "normal",
+  "status": "success",
+  "created_at": "2026-11-16T04:36:08.230180+00:00",
+  "finished_at": "2026-11-16T04:36:53.792936+00:00",
+  "events": [
+    {
+      "step": "ingest",
+      "status": "running",
+      "at": "2026-11-16T04:36:08.236634+00:00"
+    },
+    {
+      "step": "ingest",
+      "status": "passed",
+      "at": "2026-11-16T04:36:08.381306+00:00",
+      "sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a"
+    },
+    {
+      "step": "contract",
+      "status": "running",
+      "at": "2026-11-16T04:36:08.407863+00:00"
+    },
+    {
+      "step": "contract",
+      "status": "passed",
+      "at": "2026-11-16T04:36:39.966374+00:00",
+      "columns": 20
+    },
+    {
+      "step": "quality",
+      "status": "running",
+      "at": "2026-11-16T04:36:39.967426+00:00"
+    },
+    {
+      "step": "quality",
+      "status": "passed",
+      "at": "2026-11-16T04:36:40.249671+00:00",
+      "accepted": 3251812,
+      "rejected": 223414
+    },
+    {
+      "step": "transform",
+      "status": "running",
+      "at": "2026-11-16T04:36:43.425865+00:00"
+    },
+    {
+      "step": "transform",
+      "status": "passed",
+      "at": "2026-11-16T04:36:53.788497+00:00",
+      "tests": 13
+    },
+    {
+      "step": "publish",
+      "status": "running",
+      "at": "2026-11-16T04:36:53.789654+00:00"
+    },
+    {
+      "step": "publish",
+      "status": "passed",
+      "at": "2026-11-16T04:36:53.791743+00:00"
+    }
+  ],
+  "step": "publish",
+  "source_sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a",
+  "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-01.parquet",
+  "bytes": 59158238,
+  "policy": "yellow-v1.0",
+  "schema": [
+    {
+      "name": "VendorID",
+      "type": "INTEGER"
+    },
+    {
+      "name": "tpep_pickup_datetime",
+      "type": "TIMESTAMP"
+    },
+    {
+      "name": "tpep_dropoff_datetime",
+      "type": "TIMESTAMP"
+    },
+    {
+      "name": "passenger_count",
+      "type": "BIGINT"
+    },
+    {
+      "name": "trip_distance",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "RatecodeID",
+      "type": "BIGINT"
+    },
+    {
+      "name": "store_and_fwd_flag",
+      "type": "VARCHAR"
+    },
+    {
+      "name": "PULocationID",
+      "type": "INTEGER"
+    },
+    {
+      "name": "DOLocationID",
+      "type": "INTEGER"
+    },
+    {
+      "name": "payment_type",
+      "type": "BIGINT"
+    },
+    {
+      "name": "fare_amount",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "extra",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "mta_tax",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "tip_amount",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "tolls_amount",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "improvement_surcharge",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "total_amount",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "congestion_surcharge",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "Airport_fee",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "cbd_congestion_fee",
+      "type": "DOUBLE"
+    }
+  ],
+  "missing": [],
+  "raw": 3475226,
+  "accepted": 3251812,
+  "rejected": 223414,
+  "checks": [
+    {
+      "rule": "time_order",
+      "failed": 3254
+    },
+    {
+      "rule": "partition",
+      "failed": 22
+    },
+    {
+      "rule": "distance",
+      "failed": 91015
+    },
+    {
+      "rule": "zone",
+      "failed": 0
+    },
+    {
+      "rule": "fare",
+      "failed": 144442
+    },
+    {
+      "rule": "payment",
+      "failed": 0
+    }
+  ],
+  "pass_rate": 0.9357123824464941,
+  "dbt_results": [
+    {
+      "name": "model.stratum.stg_trips",
+      "status": "success",
+      "seconds": 0.09082531929016113
+    },
+    {
+      "name": "test.stratum.not_null_stg_trips_record_key.6eb67912c3",
+      "status": "pass",
+      "seconds": 0.16949725151062012
+    },
+    {
+      "name": "test.stratum.not_null_stg_trips_pickup.76006a2ae2",
+      "status": "pass",
+      "seconds": 0.17191195487976074
+    },
+    {
+      "name": "test.stratum.relationships_stg_trips_pickup_zone__zone_id__source_raw_zones_.bcaff2aa7c",
+      "status": "pass",
+      "seconds": 0.24669671058654785
+    },
+    {
+      "name": "test.stratum.unique_stg_trips_record_key.2133a690cf",
+      "status": "pass",
+      "seconds": 0.4261190891265869
+    },
+    {
+      "name": "model.stratum.daily_metrics",
+      "status": "success",
+      "seconds": 0.1848924160003662
+    },
+    {
+      "name": "model.stratum.zone_metrics",
+      "status": "success",
+      "seconds": 0.20779895782470703
+    },
+    {
+      "name": "test.stratum.not_null_daily_metrics_day.bdeea9b0d7",
+      "status": "pass",
+      "seconds": 0.052260637283325195
+    },
+    {
+      "name": "test.stratum.not_null_daily_metrics_trips.08ae415457",
+      "status": "pass",
+      "seconds": 0.0491185188293457
+    },
+    {
+      "name": "test.stratum.reconcile",
+      "status": "pass",
+      "seconds": 0.0512852668762207
+    },
+    {
+      "name": "test.stratum.unique_daily_metrics_day.d99e44b8d8",
+      "status": "pass",
+      "seconds": 0.04081320762634277
+    },
+    {
+      "name": "test.stratum.not_null_zone_metrics_zone_id.26934b34d3",
+      "status": "pass",
+      "seconds": 0.03760504722595215
+    },
+    {
+      "name": "test.stratum.unique_zone_metrics_zone_id.f0bb5c4805",
+      "status": "pass",
+      "seconds": 0.0311739444732666
+    }
+  ],
+  "duration_ms": 45561.34,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "x86_64",
+    "pipeline_memory_limit": "1GB",
+    "pipeline_threads": 1,
+    "timing_scope": "engine processing including dbt; native authoring machine; not a production SLA"
+  }
+}

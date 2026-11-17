@@ -1,0 +1,31 @@
+version: 2
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: trips
+      - name: zones
+models:
+  - name: stg_trips
+    description: Quality-approved trip records with conservative exact-row duplicate filtering.
+    columns:
+      - name: record_key
+        tests: [not_null, unique]
+      - name: pickup
+        tests: [not_null]
+      - name: pickup_zone
+        tests:
+          - relationships:
+              arguments:
+                to: source('raw','zones')
+                field: zone_id
+  - name: daily_metrics
+    columns:
+      - name: day
+        tests: [not_null, unique]
+      - name: trips
+        tests: [not_null]
+  - name: zone_metrics
+    columns:
+      - name: zone_id
+        tests: [not_null, unique]

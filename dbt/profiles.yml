@@ -1,0 +1,9 @@
+stratum:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('STRATUM_WAREHOUSE') }}"
+      threads: 2
+      settings:
+        memory_limit: 512MB
